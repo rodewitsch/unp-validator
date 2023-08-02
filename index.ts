@@ -1,5 +1,5 @@
 const positionWeights = [29, 23, 19, 17, 13, 7, 5, 3];
-const letterValues = {
+const firstLetterValues = {
   A: 10,
   B: 11,
   C: 12,
@@ -7,6 +7,18 @@ const letterValues = {
   H: 17,
   K: 20,
   M: 22,
+};
+const secondLetterValues = {
+  A: 0,
+  B: 1,
+  C: 2,
+  E: 3,
+  H: 4,
+  K: 5,
+  M: 6,
+  O: 7,
+  P: 8,
+  T: 9,
 };
 const availableLegalRanges = [
   [10000000, 18999999],
@@ -56,11 +68,10 @@ export function isValid(unp: string): boolean {
   if (type === 'legal' && !checkAvailableLegalRanges(unp)) return false;
   if (type === 'individual') {
     if (!checkIndividualRange(unp)) return false;
-    splittedUNP = splittedUNP.map((char) => {
-      // @ts-ignore
-      if (!Number(char) && char !== '0') return letterValues[char];
-      return char;
-    });
+    // @ts-ignore
+    splittedUNP[0] = firstLetterValues[splittedUNP[0]].toString();
+    // @ts-ignore
+    splittedUNP[1] = secondLetterValues[splittedUNP[1]].toString();
   }
   const UNPsum = splittedUNP.slice(0, -1).reduce((acc, curr, index) => {
     return acc + Number(curr) * positionWeights[index];
