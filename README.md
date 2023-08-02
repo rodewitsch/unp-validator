@@ -6,4 +6,4 @@
 
     import { isValid } from 'unp-validator';
 
-    console.log(isValid('192266398'))
+    console.log(isValid('100320487')); // true
