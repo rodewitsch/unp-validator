@@ -1,8 +1,14 @@
 {
   "name": "unp-validator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility for unp validation",
-  "keywords": ["unp", "validation", "belarus", "mns", "taxes"],
+  "keywords": [
+    "unp",
+    "validation",
+    "belarus",
+    "mns",
+    "taxes"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
