@@ -9,6 +9,10 @@
     "mns",
     "taxes"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodewitsch/unp-validator"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
