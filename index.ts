@@ -1,38 +1,11 @@
-const positionWeights = [29, 23, 19, 17, 13, 7, 5, 3];
-const firstLetterValues = {
-  A: 10,
-  B: 11,
-  C: 12,
-  E: 14,
-  H: 17,
-  K: 20,
-  M: 22,
-};
-const secondLetterValues = {
-  A: 0,
-  B: 1,
-  C: 2,
-  E: 3,
-  H: 4,
-  K: 5,
-  M: 6,
-  O: 7,
-  P: 8,
-  T: 9,
-};
-const availableLegalRanges = [
-  [10000000, 18999999],
-  [20000000, 28999999],
-  [30000000, 38999999],
-  [40000000, 48999999],
-  [50000000, 58999999],
-  [60000000, 68999999],
-  [70000000, 78999999],
-];
-const allowedFirstChar = [
-  ['1', '2', '3', '4', '5', '6', '7'],
-  ['A', 'B', 'C', 'E', 'H', 'K', 'M'],
-];
+import {
+  allowedFirstChar,
+  availableLegalRanges,
+  firstLetterValues,
+  secondLetterValues,
+  positionWeights,
+} from './constants';
+import { ValidationOptions } from './interfaces';
 
 function checkLength(unp: string): boolean {
   return unp.length === 9;
@@ -60,10 +33,11 @@ function getType(unp: string): string {
   return '';
 }
 
-export function isValid(unp: string): boolean {
+export function isValid(unp: string, options?: ValidationOptions): boolean {
   if (!checkLength(unp)) return false;
   if (!checkType(unp)) return false;
   const type = getType(unp);
+  if(options?.only && options.only !== type) return false;
   let splittedUNP = unp.split('');
   if (type === 'legal' && !checkAvailableLegalRanges(unp)) return false;
   if (type === 'individual') {
