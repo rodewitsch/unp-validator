@@ -30,6 +30,6 @@ export const availableLegalRanges = [
   [70000000, 78999999],
 ];
 export const allowedFirstChar = [
-  ['1', '2', '3', '4', '5', '6', '7'],
+  ['1', '2', '3', '4', '5', '6', '7', '8'],
   ['A', 'B', 'C', 'E', 'H', 'K', 'M'],
 ];
