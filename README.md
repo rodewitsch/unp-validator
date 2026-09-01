@@ -18,3 +18,12 @@
 
     isValid('KE7810709', { only: 'individual' });
     isValid('100320487', { only: 'legal' });
+
+<p align="center">
+Я буду рад вашей поддержке. Каждое пожертвование идет на развитие проекта и поддержание инфраструктуры 💙
+</p>
+<p align="center">
+  <a href="https://boosty.to/rodevich/donate">
+    <img src="https://github.com/user-attachments/assets/a15bd2c0-ed6b-4140-9480-dfb70a0b5f1a" alt="Donate">
+  </a>
+</p>
